@@ -1,0 +1,6 @@
+- name: install initaliztion require software
+  #yum: name={{ items }} state=installed
+  yum: name="pcre-devel,zlib-devel"
+  #with_item
+  #   - zlib-devel 
+  #   - prce-devel

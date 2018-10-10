@@ -1,0 +1,8 @@
+- name: Copy Nginx Software
+  copy: src=nginx.tar.gz dest=/tmp/nginx.tar.gz owner=root group=root
+- name: Uncommpreesion Nginx Software
+  shell: tar -zxf /tmp/nginx.tar.gz -C /usr/local
+- name: Copy Nginx Start Scrpit
+  template: src=nginx dest=/etc/init.d/nginx owner=root group=root mode=0755
+- name: Copy Nginx Config
+  template: src=nginx.conf dest={{ nginx_basedir }}/conf/ owner=root group=root mode=0644
